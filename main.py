@@ -52,5 +52,5 @@ def draw_and_ask(words):
 
 words = choose_set()
 points = draw_and_ask(words)
-print("Koniec! twój wynik to:",points)
+print("The end! score:",points)
 input()
