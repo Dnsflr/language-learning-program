@@ -1,5 +1,6 @@
 import random
 
+# Function to create a dictionary from a file
 def create_dictionary_from_file(file_path):
     dictionary = {}
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -10,11 +11,12 @@ def create_dictionary_from_file(file_path):
                 dictionary[expressions[0].strip()] = expressions[1].strip()
     return dictionary
 
+# Load word sets from files
 sport_words = create_dictionary_from_file(r'path')
 nature_words = create_dictionary_from_file(r'path')
 town_words = create_dictionary_from_file(r'path')
 
-
+# Function to choose the word set
 def choose_set():
     print("Choose words set level: 1-Town, 2-Nature, 3-Sport")
     choice = input("Enter your choice (1/2/3): ").strip()
@@ -28,6 +30,7 @@ def choose_set():
         print("Invalid choice, defaulting to Town.")
         return town_words
 
+# Function to draw a word and ask the user for the translation
 def draw_and_ask(words):
     points = 0
     used_words = []
@@ -48,7 +51,6 @@ def draw_and_ask(words):
             print(f"Wrong. The correct answer is: {correct_translation}")
 
     return points
-
 
 words = choose_set()
 points = draw_and_ask(words)
